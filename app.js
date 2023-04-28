@@ -31,9 +31,9 @@ inquirer
     let script = ``;
     
     // title태그 추가
-    script += `document.head.innerHTML += <title>${answers.title}</title>;
-    const mainText = document.createElement('p');
-    mainText.innerText = ${answers.mainText}`
+    script += `document.head.innerHTML += '<title>${answers.title}</title>';
+        const mainText = document.createElement('p');
+        mainText.innerText = '${answers.mainText}'`
 
     // root div를 만들 것인지
     if (answers.rootDIV === true) {
