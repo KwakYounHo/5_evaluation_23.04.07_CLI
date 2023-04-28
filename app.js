@@ -30,9 +30,7 @@ inquirer
       {
         type: 'confirm',
         name: 'create',
-        message: `생성될 파일의 확장자는 .html이며
-        생성된 html의 title은 ${answers.title}입니다.
-        ${answers.fileName}이름으로 파일을 생성하시겠습니까?`
+        message: `생성될 파일의 확장자는 .html이며\n  생성된 html의 title은 ${answers.title}입니다.\n  ${answers.fileName}이름으로 파일을 생성하시겠습니까?`
       }
     ])
       .then(YorN => {
