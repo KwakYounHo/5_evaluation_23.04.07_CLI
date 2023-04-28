@@ -27,17 +27,17 @@ inquirer
   // .then(answers => console.log(answers))
   .then(answers => {
 
-    // body에 script태그 안에 넣을 내용
+    //* body에 script태그 안에 넣을 내용
     let script = ``;
     
-    // title태그 추가
+    //* title태그 추가
     script += `document.head.innerHTML += '<title>${answers.title}</title>';
         const mainText = document.createElement('p');
         mainText.innerText = '${answers.mainText}'`
     
-    console.log(anwers.rootDIV);
-    // root div를 만들 것인지
-    if (answers.rootDIV === true) {
+    // console.log(answers.rootDiv);
+    //* root div를 만들 것인지
+    if (answers.rootDiv === true) {
       script += `const root = document.createElement('div');
       root.id = 'root';
       document.body.appendChild(root);
@@ -46,7 +46,7 @@ inquirer
       script += `document.body.appendChild(mainText);`
     }
 
-    // html의 내용 편집
+    //* html의 내용 편집
     let makeHTML = `<!DOCTYPE html>
     <html lang="ko">
     <head>
@@ -61,9 +61,9 @@ inquirer
     </body>
     </html>`
 
-    // html 만들기
-    // fs.writeFile(`./result/${answers.fileName}.html`, makeHTML, (err, result)=>{
-    //   if (err) throw err;
-    //   console.log(result);
-    // })
+    //* html 만들기
+    fs.writeFile(`./result/${answers.fileName}.html`, makeHTML, (err, result)=>{
+      if (err) throw err;
+      console.log(result);
+    })
   })
