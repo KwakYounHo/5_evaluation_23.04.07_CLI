@@ -33,7 +33,8 @@ inquirer
     //* title태그 추가
     script += `document.head.innerHTML += '<title>${answers.title}</title>';
         const mainText = document.createElement('p');
-        mainText.innerText = '${answers.mainText}'`
+        mainText.innerText = '${answers.mainText}';
+        `
     
     // console.log(answers.rootDiv);
     //* root div를 만들 것인지
@@ -41,9 +42,11 @@ inquirer
       script += `const root = document.createElement('div');
       root.id = 'root';
       document.body.appendChild(root);
-      root.appendChild(mainText);`
+      root.appendChild(mainText);
+      `
     } else {
-      script += `document.body.appendChild(mainText);`
+      script += `document.body.appendChild(mainText);
+      `
     }
 
     //* html의 내용 편집
