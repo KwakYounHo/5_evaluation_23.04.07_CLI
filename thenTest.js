@@ -35,21 +35,34 @@
     // console.log(value);
   // })
 
-const C = new Promise(resolve => {
-  resolve('나를 끝까지 전송해 줘~');
-})
-.then(value => {
-  console.log('첫 번째 덴', value)
-  const A = new Promise(resolve => {
-    resolve(value, '나도 버리지 말아줘');
+// const C = new Promise(resolve => {
+  // resolve('나를 끝까지 전송해 줘~');
+// })
+// .then(value => {
+  // console.log('첫 번째 덴', value)
+  // const A = new Promise(resolve => {
+    // resolve(value, '나도 버리지 말아줘');
+  // })
+    // .then(value => {
+      // return value
+    // })
+  // console.log('덴속의 프로미스', A);
+  // return [value, A];
+// })
+// .then(value => {
+  // value[1].then(value => console.log('덴속의 덴',value))
+  // console.log('두 번째 덴', value);
+  // // console.log(typeof value[1])
+// })
+
+const D = async () => {
+  const A = await new Promise(resolve => {
+    resolve('나를 버리지 말아줘');
   })
-  .then(value => {
-    return value
+  const B = await new Promise(resolve => {
+    resolve('나도 대려가 줘');
   })
-  console.log('덴속의 프로미스', A);
-  return [value, A];
-})
-.then(value => {
-  value[1].then(value => console.log('덴속의 덴',value))
-  console.log('두 번째 덴', value);
-})
+  console.log(A, B);
+}
+
+D();
