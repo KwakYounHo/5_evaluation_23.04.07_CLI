@@ -34,13 +34,16 @@ inquirer
     script += `document.head.innerHTML += '<title>${answers.title}</title>';
         const mainText = document.createElement('p');
         mainText.innerText = '${answers.mainText}'`
-
+    
+    console.log(anwers.rootDIV);
     // root div를 만들 것인지
     if (answers.rootDIV === true) {
       script += `const root = document.createElement('div');
       root.id = 'root';
       document.body.appendChild(root);
-      root.appendChild(mainText)`
+      root.appendChild(mainText);`
+    } else {
+      script += `document.body.appendChild(mainText);`
     }
 
     // html의 내용 편집
@@ -59,8 +62,8 @@ inquirer
     </html>`
 
     // html 만들기
-    fs.writeFile(`./result/${answers.fileName}.html`, makeHTML, (err, result)=>{
-      if (err) throw err;
-      console.log(result);
-    })
+    // fs.writeFile(`./result/${answers.fileName}.html`, makeHTML, (err, result)=>{
+    //   if (err) throw err;
+    //   console.log(result);
+    // })
   })
