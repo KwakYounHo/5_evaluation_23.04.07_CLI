@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+    <html lang="ko">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+      <script>
+        document.head.innerHTML += '<title>내가 보이시나요</title>';
+        const mainText = document.createElement('p');
+        mainText.innerText = '진행 순서\n -> inquirer로 사용해 보기 -> 2중 inquirer 사용해 보기 -> commander패키지 사용해 보기 -> 첫 번째 Promise의 then에서 두 번째 Promise 생성해 보기 -> async로 바꾸어 보기';
+        const root = document.createElement('div');
+      root.id = 'root';
+      document.body.appendChild(root);
+      root.appendChild(mainText);
+      
+      </script>
+    </body>
+    </html>
